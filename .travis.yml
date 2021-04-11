@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t deepaknaithani88/DockerKubertenes -f Dockerfile.dev .
+
+script:
+  - docker run deepaknaithani88/DockerKubertenes npm run test -- --coverage
